@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button } from 'reactstrap';
 import logo from './logo.svg';
 import './App.css';
 
@@ -11,7 +12,7 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
         <p className="App-intro">
-          This going to be awesome
+          <Button color="primary">Touch me</Button>
         </p>
       </div>
     );
