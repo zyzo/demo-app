@@ -6,7 +6,16 @@
             "jsx": true
         }
     },
+    "extends": "airbnb/base",
+    "plugins": [
+      "react",
+      "react-native"
+    ],
     "rules": {
-        "semi": 2
+        "semi": 2,
+        "comma-dangle": 0,
+        "react/jsx-no-undef": 2,
+        "react/jsx-uses-react": 2,
+        "react/jsx-uses-vars": 2
     }
 }
