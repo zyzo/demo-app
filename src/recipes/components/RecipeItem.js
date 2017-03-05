@@ -1,49 +1,25 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import './recipe.scss';
 
-const styles = StyleSheet.create({
-  row: {
-    padding: 10,
-    marginTop: 5,
-    flexDirection: 'row',
-    flex: 1
-  },
-  firstColumn: {
-    flex: 0.6
-  },
-  secondColumn: {
-    flex: 0.4,
-    alignItems: 'flex-end'
-  },
-  amountLabel: {
-    fontSize: 30
-  },
-  currencyLabel: {
-    opacity: 0.8
-  }
-});
-
-const RowItem = React.createClass({
+const RecipeItem = React.createClass({
   render() {
     const {
-      row
+      recipe
     } = this.props;
     return (
-      <View style={styles.row}>
-        <View style={styles.firstColumn}>
-          <Text>
-            <Text style={styles.amountLabel}>{row.amount}</Text>
-            <Text style={styles.currencyLabel}> €</Text>
-          </Text>
-          <Text>{row.name}</Text>
-        </View>
-        <View style={styles.secondColumn}>
-          <Text>yoha
-          </Text>
-        </View>
-      </View>
+      <div className="recipe-item">
+        <div className="user-picture">
+        </div>
+        <div className="recipe-main-info">
+          {recipe.get('user')}
+          <h2>{recipe.get('name')}</h2>
+        </div>
+        <div className="recipe-right-info">
+          {recipe.get('duration')} min cook
+        </div>
+      </div>
     );
   }
 });
 
-export default RowItem;
+export default RecipeItem;

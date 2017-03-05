@@ -1,0 +1,16 @@
+.recipe-item {
+  display: flex;
+}
+.user-picture {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.recipe-main-info {
+  float: left;
+}
+
+.recipe-right-info {
+  float: right;
+}
