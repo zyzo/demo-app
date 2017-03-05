@@ -1,0 +1,26 @@
+.recipe-item {
+  display: flex;
+  padding: 0.5rem 0.25rem;
+  cursor: pointer;
+}
+.recipe-item:hover {
+  background-color: #ccc;
+}
+
+.recipe-user-picture {
+  flex: 1;
+}
+.user-picture {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: rgba(146, 146, 146, 0.38);
+}
+
+.recipe-main-info {
+  flex: 3;
+}
+
+.recipe-right-info {
+  flex: 1;
+}

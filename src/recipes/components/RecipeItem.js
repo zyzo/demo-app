@@ -1,5 +1,5 @@
 import React from 'react';
-import './recipe.scss';
+import './recipeItem.css';
 
 const RecipeItem = React.createClass({
   render() {
@@ -8,11 +8,12 @@ const RecipeItem = React.createClass({
     } = this.props;
     return (
       <div className="recipe-item">
-        <div className="user-picture">
+        <div className="recipe-user-picture">
+          <div className="user-picture"></div>
         </div>
         <div className="recipe-main-info">
           {recipe.get('user')}
-          <h2>{recipe.get('name')}</h2>
+          <h4>{recipe.get('name')}</h4>
         </div>
         <div className="recipe-right-info">
           {recipe.get('duration')} min cook

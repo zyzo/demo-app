@@ -4,13 +4,13 @@ export const initialState = {
       id: 1,
       user: 'Trinh Thuy',
       name: 'Bun bo',
-      time: 10
+      duration: 10
     },
     {
       id: 2,
       user: 'An Dang',
       name: 'Bun bo',
-      time: 20
+      duration: 20
     }
   ]
 };
