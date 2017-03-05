@@ -1,10 +1,19 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import './index.css';
-import 'bootstrap/dist/css/bootstrap.css';
+import { Provider } from 'react-redux';
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
+import RecipesList from './recipes/component.js';
+import configureStore from './configureStore';
+import initialState from './initialState';
+
+const App = React.createClass({
+  render() {
+    const store = configureStore(initialState);
+    return (
+      <Provider store={store}>
+        <RecipesList/>
+      </Provider>
+    );
+  }
+});
+
+export default App;
