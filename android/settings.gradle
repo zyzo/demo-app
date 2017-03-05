@@ -1,0 +1,3 @@
+rootProject.name = 'BetaAppNative'
+
+include ':app'
