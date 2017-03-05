@@ -4,6 +4,11 @@ export const initialState = {
       id : 1,
       name: 'Jasd',
       amount: 3.3
+    },
+    {
+      id: 2,
+      name: 'AZEAZE',
+      amount: 213.2
     }
   ]
 };

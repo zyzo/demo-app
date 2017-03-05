@@ -1,7 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 
-import RecipesList from './recipes/component.js';
+import RecipesListContainer from './recipes/container';
 import configureStore from './configureStore';
 import initialState from './initialState';
 
@@ -10,7 +10,7 @@ const App = React.createClass({
     const store = configureStore(initialState);
     return (
       <Provider store={store}>
-        <RecipesList/>
+        <RecipesListContainer/>
       </Provider>
     );
   }

@@ -1,7 +1,6 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import {
-  ListView, Text, View, TouchableOpacity
+  ListView, TouchableOpacity
 } from 'react-native';
 
 import RecipeItem from './RecipeItem';
@@ -9,7 +8,7 @@ import RecipeItem from './RecipeItem';
 const RecipesList = React.createClass({
   navigateToItem(row) {
     const nextRoute = {
-      component: RecipesItem,
+      component: RecipeItem,
       title: row.name,
       passProps: { item: row }
     };
@@ -37,15 +36,5 @@ const RecipesList = React.createClass({
   }
 });
 
-const mapStateToProps = state => (
-  {
-    recipesList: state.getIn(['recipes', 'displayList'])
-  }
-);
 
-const RecipesListContainer = connect(
-  mapStateToProps
-)(RecipesList);
-
-export { RecipesList };
-export default RecipesListContainer;
+export default RecipesList;
