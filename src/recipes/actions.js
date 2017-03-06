@@ -21,6 +21,11 @@ export const fetchRecipes = () => dispatch => {
   });
 };
 
+export const removeRecipe = () => {
+  recipesRef.child(0).remove();
+  return fetchRecipes();
+};
+
 export const addRecipe = () => {
   const newRecipe = recipesRef.push();
   newRecipe.set({

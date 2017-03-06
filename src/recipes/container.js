@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import _ from 'lodash';
 
 import RecipesList from './components/RecipesList';
-import { addRecipe, fetchRecipes } from './actions';
+import { addRecipe, fetchRecipes, removeRecipe } from './actions';
 
 const mapStateToProps = state => (
   {
@@ -13,7 +13,8 @@ const mapStateToProps = state => (
 const mapDispatchToProps = dispatch => (
   {
     onAddRecipe: _.flowRight(dispatch, addRecipe),
-    fetchRecipes: _.flowRight(dispatch, fetchRecipes)
+    fetchRecipes: _.flowRight(dispatch, fetchRecipes),
+    removeRecipe: _.flowRight(dispatch, removeRecipe)
   }
 );
 

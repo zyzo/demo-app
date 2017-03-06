@@ -3,9 +3,6 @@
   padding: 0.5rem 0.25rem;
   cursor: pointer;
 }
-.recipe-item:hover {
-  background-color: #ccc;
-}
 
 .recipe-user-picture {
   flex: 1;

@@ -1,10 +1,11 @@
 import React from 'react';
+import { Button } from 'reactstrap';
 import './recipeItem.css';
 
 const RecipeItem = React.createClass({
   render() {
     const {
-      recipe
+      recipe, removeRecipe
     } = this.props;
     return (
       <div className="recipe-item">
@@ -18,6 +19,7 @@ const RecipeItem = React.createClass({
         <div className="recipe-right-info">
           {recipe.get('duration')} min cook
         </div>
+        <Button color="link" size="sm" onClick={() => removeRecipe(recipe)}>-</Button>
       </div>
     );
   }

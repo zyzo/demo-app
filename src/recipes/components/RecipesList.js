@@ -10,14 +10,14 @@ const RecipesList = React.createClass({
   },
   render() {
     const {
-      recipesList, onAddRecipe
+      recipesList, onAddRecipe, removeRecipe
     } = this.props;
 
     return (
       <div>
         <div className="recipes-list">
           {recipesList.map((recipe, key) =>
-            <RecipeItem recipe={recipe} key={key}/>
+            <RecipeItem recipe={recipe} removeRecipe={removeRecipe} key={key}/>
           )}
         </div>
         <div className="add-recipe-btn">
