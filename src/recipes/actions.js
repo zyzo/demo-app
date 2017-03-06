@@ -15,9 +15,12 @@ export const fetchRecipes = () => dispatch => {
   });
 };
 
-export const removeRecipe = () => {
-  recipesRef.child(0).remove();
-  return fetchRecipes();
+export const removeRecipe = (key) => dispatch => {
+  recipesRef.child(key).remove().then(() => {
+    dispatch(fetchRecipes());
+  }).catch(error => {
+    console.log(error);
+  });
 };
 
 export const addRecipe = () => {

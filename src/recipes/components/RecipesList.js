@@ -16,8 +16,9 @@ const RecipesList = React.createClass({
     return (
       <div>
         <div className="recipes-list">
-          {recipesMap.valueSeq().map((recipe, key) =>
-            <RecipeItem recipe={recipe} removeRecipe={removeRecipe} key={key}/>
+          {recipesMap.keySeq().map((key, id) =>
+            <RecipeItem recipe={recipesMap.get(key)} removeRecipe={removeRecipe}
+              key={id} recipeKey={key}/>
           )}
         </div>
         <div className="add-recipe-btn">

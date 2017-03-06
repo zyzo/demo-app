@@ -5,7 +5,7 @@ import './recipeItem.css';
 const RecipeItem = React.createClass({
   render() {
     const {
-      recipe, removeRecipe
+      recipe, removeRecipe, recipeKey
     } = this.props;
     return (
       <div className="recipe-item">
@@ -19,7 +19,7 @@ const RecipeItem = React.createClass({
         <div className="recipe-right-info">
           {recipe.get('duration')} min cook
         </div>
-        <Button color="link" size="sm" onClick={() => removeRecipe(recipe)}>-</Button>
+        <Button color="link" size="sm" onClick={() => removeRecipe(recipeKey)}>-</Button>
       </div>
     );
   }
