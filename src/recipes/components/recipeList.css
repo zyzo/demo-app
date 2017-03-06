@@ -2,3 +2,7 @@
   flex: 1;
   justify-content: center;
 }
+
+.add-recipe-btn {
+  margin: 1rem 0.25rem;
+}

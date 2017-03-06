@@ -9,3 +9,6 @@ npm-debug.log
 yarn-error.log
 
 build/
+
+# secret stuffs
+firebase.init.js
