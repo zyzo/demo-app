@@ -17,9 +17,15 @@ const RecipeItem = React.createClass({
           <h4>{recipe.get('name')}</h4>
         </div>
         <div className="recipe-right-info">
-          {recipe.get('duration')} min cook
+          <p>{recipe.get('duration')} min cook</p>
         </div>
-        <Button color="link" size="sm" onClick={() => removeRecipe(recipeKey)}>-</Button>
+        <div className="icon">
+          <i className="fa fa-chevron-right" aria-hidden="true"></i>
+        </div>
+        <Button className="remove-btn" color="danger" size="sm"
+          onClick={() => removeRecipe(recipeKey)}>
+          Remove
+        </Button>
       </div>
     );
   }

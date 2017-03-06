@@ -4,6 +4,10 @@
   cursor: pointer;
 }
 
+.recipe-item:hover {
+  background-color: #eee;
+}
+
 .recipe-user-picture {
   flex: 1;
 }
@@ -20,4 +24,14 @@
 
 .recipe-right-info {
   flex: 1;
+}
+
+.recipe-item .icon {
+  color: #999;
+  font-size: 1rem;
+}
+
+/* Hide remove btn as no real use-case now */
+.recipe-item .remove-btn {
+  display: none;
 }
