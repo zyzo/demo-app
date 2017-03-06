@@ -4,6 +4,10 @@ import RecipeItem from './RecipeItem';
 import './recipeList.css';
 
 const RecipesList = React.createClass({
+  componentWillMount() {
+    // fetch once to prepare data
+    this.props.fetchRecipes();
+  },
   render() {
     const {
       recipesList, onAddRecipe
