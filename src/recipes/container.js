@@ -1,22 +1,19 @@
 import { connect } from 'react-redux';
-import _ from 'lodash';
+import { bindActionCreators } from 'redux';
 
 import RecipesList from './components/RecipesList';
 import { addRecipe, fetchRecipes, removeRecipe } from './actions';
 
 const mapStateToProps = state => (
   {
-    recipesList: state.getIn(['recipes', 'displayList'])
+    recipesMap: state.getIn(['recipes', 'recipesMap'])
   }
 );
 
-const mapDispatchToProps = dispatch => (
-  {
-    onAddRecipe: _.flowRight(dispatch, addRecipe),
-    fetchRecipes: _.flowRight(dispatch, fetchRecipes),
-    removeRecipe: _.flowRight(dispatch, removeRecipe)
-  }
-);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({
+    addRecipe, fetchRecipes, removeRecipe
+  }, dispatch);
 
 const RecipesListContainer = connect(
   mapStateToProps, mapDispatchToProps

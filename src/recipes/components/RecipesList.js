@@ -6,22 +6,22 @@ import './recipeList.css';
 const RecipesList = React.createClass({
   componentWillMount() {
     // fetch once to prepare data
-    this.props.fetchRecipes();
+    // this.props.fetchRecipes();
   },
   render() {
     const {
-      recipesList, onAddRecipe, removeRecipe
+      recipesMap, addRecipe, removeRecipe
     } = this.props;
 
     return (
       <div>
         <div className="recipes-list">
-          {recipesList.map((recipe, key) =>
+          {recipesMap.valueSeq().map((recipe, key) =>
             <RecipeItem recipe={recipe} removeRecipe={removeRecipe} key={key}/>
           )}
         </div>
         <div className="add-recipe-btn">
-          <Button color="default" block onClick={onAddRecipe}>Add my recipe</Button>
+          <Button color="default" block onClick={addRecipe}>Add my recipe</Button>
         </div>
       </div>
     );
