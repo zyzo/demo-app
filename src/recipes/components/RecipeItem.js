@@ -1,14 +1,17 @@
 import React from 'react';
+import { browserHistory } from 'react-router';
 import { Button } from 'reactstrap';
 import './recipeItem.css';
 
 const RecipeItem = React.createClass({
   render() {
     const {
-      recipe, removeRecipe, recipeKey
+      recipe, removeRecipe, recipeId
     } = this.props;
     return (
-      <div className="recipe-item">
+      <div className="recipe-item" onClick={() => {
+        browserHistory.push(`/add_to_cooklist/${recipeId}`);
+      }}>
         <div className="recipe-user-picture">
           <div className="user-picture"></div>
         </div>
@@ -23,7 +26,7 @@ const RecipeItem = React.createClass({
           <i className="fa fa-chevron-right" aria-hidden="true"></i>
         </div>
         <Button className="remove-btn" color="danger" size="sm"
-          onClick={() => removeRecipe(recipeKey)}>
+          onClick={removeRecipe}>
           Remove
         </Button>
       </div>

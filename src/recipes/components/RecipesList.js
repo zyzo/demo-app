@@ -18,9 +18,11 @@ const RecipesList = React.createClass({
           <Button color="default" block onClick={addRecipe}>Add my recipe</Button>
         </div>*/}
         <div className="recipes-list">
-          {recipesMap.keySeq().map((key, id) =>
-            <RecipeItem recipe={recipesMap.get(key)} removeRecipe={removeRecipe}
-              key={id} recipeKey={key}/>
+          {recipesMap.keySeq().map((recipeId, key) =>
+            <RecipeItem recipe={recipesMap.get(recipeId)}
+              emoveRecipe={() => removeRecipe(recipeId)}
+              recipeId={recipeId}
+              key={key}/>
           )}
       </div>
       </div>
