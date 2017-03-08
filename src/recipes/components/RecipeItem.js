@@ -10,7 +10,7 @@ const RecipeItem = React.createClass({
     } = this.props;
     return (
       <div className="recipe-item" onClick={() => {
-        browserHistory.push(`/add_to_cooklist/${recipeId}`);
+        browserHistory.push(`/add_bookmark/${recipeId}`);
       }}>
         <div className="recipe-user-picture">
           <div className="user-picture"></div>

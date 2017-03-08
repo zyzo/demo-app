@@ -1,4 +1,9 @@
 export const RECIPE = {
-  ADD_RECIPE: 'add recipe',
-  FETCH_RECIPES: 'fetch recipes'
+  ADD_RECIPE: 'RECIPE: add recipe',
+  FETCH_RECIPES: 'RECIPE: fetch recipes'
+};
+
+
+export const BOOKMARK = {
+  ADD_BOOKMARK: 'BOOKMARK: add bookmark'
 };

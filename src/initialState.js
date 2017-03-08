@@ -1,10 +1,12 @@
 import immutable from 'immutable';
 
 import { initialState as recipesInitialState } from './recipes/reducer';
+import { initialState as bookmarksInitialState } from './bookmarks/reducer';
 
 const initialState = immutable.fromJS(
   {
-    recipes: recipesInitialState
+    recipes: recipesInitialState,
+    bookmarks: bookmarksInitialState
   }
 );
 
