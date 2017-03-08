@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import AddBookmark from './components/AddBookmark';
-import { addBookmark } from './actions';
+import AddBookmark from '../components/AddBookmark';
+import { addBookmark } from '../actions';
 
 const mapStateToProps = (state, ownProps) => (
   {

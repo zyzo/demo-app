@@ -7,7 +7,8 @@ import {
 import { Provider } from 'react-redux';
 
 import RecipesListContainer from './recipes/container';
-import AddBookmarkContainer from './bookmarks/container';
+import AddBookmarkContainer from './bookmarks/containers/AddBookmarkContainer';
+import BookmarkListContainer from './bookmarks/containers/BookmarkListContainer';
 import configureStore from './configureStore';
 import initialState from './initialState';
 
@@ -19,6 +20,7 @@ const App = React.createClass({
         <Router history={browserHistory}>
             <Route path="/" component={RecipesListContainer}/>
             <Route path="/add_bookmark/:recipeId" component={AddBookmarkContainer} />
+            <Route path="/bookmarks" component={BookmarkListContainer} />
         </Router>
       </Provider>
     );

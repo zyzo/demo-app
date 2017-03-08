@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import RecipesList from './components/RecipesList';
+import RecipeList from './components/RecipeList';
 import { addRecipe, fetchRecipes, removeRecipe } from './actions';
 
 const mapStateToProps = state => (
@@ -17,6 +17,6 @@ const mapDispatchToProps = dispatch =>
 
 const RecipesListContainer = connect(
   mapStateToProps, mapDispatchToProps
-)(RecipesList);
+)(RecipeList);
 
 export default RecipesListContainer;

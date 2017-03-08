@@ -3,7 +3,7 @@ import immutable from 'immutable';
 import { BOOKMARK } from '../ACTION_TYPES';
 
 const initialState = {
-  recipeBookmarks: {
+  bookmarkMap: {
     1: {
       recipeId: '1',
       time: 'lunch',

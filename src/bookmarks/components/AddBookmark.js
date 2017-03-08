@@ -1,10 +1,12 @@
 import React from 'react';
+import { browserHistory } from 'react-router';
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 
 const AddToCooklist = React.createClass({
   getInitialState() {
     return {
       dateInput: '',
+      mealInput: '',
       noteInput: ''
     };
   },
@@ -19,11 +21,20 @@ const AddToCooklist = React.createClass({
           <Form>
             <FormGroup>
               <Label htmlFor="timeInput">Date</Label>
-              <Input type="datetime" id="dateInput" placeholder="Enter a date"
-                value={this.state.dateInput}
+              <Input type="date" id="dateInput" value={this.state.dateInput}
                 onChange={e => {
                   this.setState({ dateInput: e.target.value });
                 }}/>
+            </FormGroup>
+            <FormGroup>
+              <Label htmlFor="mealInput">Meal</Label>
+              <Input type="select" id="mealInput" value={this.state.mealInput}
+                onChange={e => {
+                  this.setState({ mealInput: e.target.value });
+                }}>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+              </Input>
             </FormGroup>
             <FormGroup>
               <Label htmlFor="noteInput">Notes (optional)</Label>
@@ -38,8 +49,10 @@ const AddToCooklist = React.createClass({
               e.preventDefault();
               addBookmark({
                 date: this.state.dateInput,
+                meal: this.state.mealInput,
                 note: this.state.noteInput
               });
+              browserHistory.push(`/bookmarks`);
             }}>Save this</Button>
           </Form>
         </div>
