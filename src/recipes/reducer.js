@@ -3,7 +3,7 @@ import immutable from 'immutable';
 import { RECIPE } from '../ACTION_TYPES';
 
 const initialState = {
-  recipesMap: {
+  recipeMap: {
     1: {
       user: 'Trinh Thuy',
       name: 'Bun bo',
@@ -20,7 +20,7 @@ const initialState = {
 const recipes = (state, action) => {
   switch (action.type) {
     case RECIPE.FETCH_RECIPES:
-      return state.set('recipesMap', immutable.fromJS(action.recipesMap));
+      return state.set('recipeMap', immutable.fromJS(action.recipesMap));
     default:
       return state;
   }
