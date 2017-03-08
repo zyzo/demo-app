@@ -10,11 +10,10 @@ import RecipesListContainer from './recipes/container';
 import AddBookmarkContainer from './bookmarks/containers/AddBookmarkContainer';
 import BookmarkListContainer from './bookmarks/containers/BookmarkListContainer';
 import configureStore from './configureStore';
-import initialState from './initialState';
 
 const App = React.createClass({
   render() {
-    const store = configureStore(initialState);
+    const store = configureStore();
     return (
       <Provider store={store}>
         <Router history={browserHistory}>
