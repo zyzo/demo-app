@@ -6,7 +6,6 @@ const BookmarkList = React.createClass({
     const {
       bookmarkMap
     } = this.props;
-
     return (
       <div>
         {/* <div className="add-recipe-btn">

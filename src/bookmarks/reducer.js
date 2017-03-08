@@ -1,17 +1,17 @@
-import immutable from 'immutable';
-
 import { BOOKMARK } from '../ACTION_TYPES';
 
 const initialState = {
   bookmarkMap: {
     1: {
       recipeId: '1',
-      time: 'lunch',
+      date: 1489013667,
+      meal: 'lunch',
       note: 'Thuy beo map dung co nhin nua'
     },
     2: {
       recipeId: '2',
-      time: 'dinner'
+      date: 1489013667,
+      meal: 'dinner'
     }
   }
 };

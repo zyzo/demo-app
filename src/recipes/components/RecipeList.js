@@ -1,6 +1,6 @@
 import React from 'react';
 import RecipeItem from './RecipeItem';
-import './recipeList.css';
+import './RecipeList.css';
 
 const RecipeList = React.createClass({
   componentWillMount() {

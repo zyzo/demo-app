@@ -1,0 +1,37 @@
+.bookmark-item {
+  display: flex;
+  padding: 0.5rem 0.25rem;
+  cursor: pointer;
+}
+
+.bookmark-item:hover {
+  background-color: #eee;
+}
+
+.bookmark-user-picture {
+  flex: 1;
+}
+.user-picture {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: rgba(146, 146, 146, 0.38);
+}
+
+.bookmark-main-info {
+  flex: 3;
+}
+
+.bookmark-right-info {
+  flex: 1;
+}
+
+.bookmark-item .icon {
+  color: #999;
+  font-size: 1rem;
+}
+
+/* Hide remove btn as no real use-case now */
+.bookmark-item .remove-btn {
+  display: none;
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { browserHistory } from 'react-router';
 import { Button } from 'reactstrap';
-import './recipeItem.css';
+import './RecipeItem.css';
 
 const RecipeItem = React.createClass({
   render() {
