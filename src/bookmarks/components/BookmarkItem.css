@@ -19,10 +19,12 @@
 
 .bookmark-date {
   color: #999;
+  text-align: center;
+  width: 100%;
 }
 
 .bookmark-duration {
-  text-align: right;
+  float: right;
 }
 
 .bookmark-note {
