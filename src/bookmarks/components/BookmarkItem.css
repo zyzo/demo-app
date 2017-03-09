@@ -1,6 +1,5 @@
 .bookmark-item {
-  display: flex;
-  padding: 0.5rem 0.25rem;
+  padding: 0 0.5rem;
   cursor: pointer;
 }
 
@@ -18,20 +17,22 @@
   background-color: rgba(146, 146, 146, 0.38);
 }
 
-.bookmark-main-info {
-  flex: 3;
+.bookmark-date {
+  color: #999;
 }
 
-.bookmark-right-info {
-  flex: 1;
+.bookmark-duration {
+  text-align: right;
 }
+
+.bookmark-note {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 
 .bookmark-item .icon {
   color: #999;
   font-size: 1rem;
-}
-
-/* Hide remove btn as no real use-case now */
-.bookmark-item .remove-btn {
-  display: none;
 }
