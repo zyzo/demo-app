@@ -1,5 +1,8 @@
 import React from 'react';
+
 import RecipeItem from './RecipeItem';
+import EmptyViewComponent from '../../common/components/EmptyViewComponent';
+
 import './RecipeList.css';
 
 const RecipeList = React.createClass({
@@ -9,9 +12,14 @@ const RecipeList = React.createClass({
   },
   render() {
     const {
-      recipeMap, removeRecipe
+      recipeMap, removeRecipe, recipeMapFetched
     } = this.props;
 
+    if (!recipeMapFetched) {
+      return (
+        <EmptyViewComponent />
+      );
+    }
     return (
       <div>
         {/* <div className="add-recipe-btn">

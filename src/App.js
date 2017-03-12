@@ -15,7 +15,7 @@ const App = React.createClass({
   render() {
     const store = configureStore();
     return (
-      <Provider store={store}>
+      <Provider store={store} className="react-root">
         <Router history={browserHistory}>
             <Route path="/" component={RecipesListContainer}/>
             <Route path="/add_bookmark/:recipeId" component={AddBookmarkContainer} />

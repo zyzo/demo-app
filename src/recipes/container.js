@@ -6,7 +6,8 @@ import { addRecipe, fetchRecipes, removeRecipe } from './actions';
 
 const mapStateToProps = state => (
   {
-    recipeMap: state.getIn(['recipes', 'recipeMap'])
+    recipeMap: state.getIn(['recipes', 'recipeMap']),
+    recipeMapFetched: state.getIn(['recipes', 'fetched'])
   }
 );
 
