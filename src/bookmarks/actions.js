@@ -1,13 +1,22 @@
 import firebase from 'firebase';
-import { BOOKMARK } from '../ACTION_TYPES';
+import { BOOKMARK, RECIPE } from '../ACTION_TYPES';
 
 const bookmarksRef = firebase.database().ref('bookmarks');
+const recipesRef = firebase.database().ref('recipes');
 
 export const fetchBookmarks = () => dispatch => {
   bookmarksRef.once('value').then((snapshot) => {
     const bookmarkMap = {};
     snapshot.forEach(bookmark => {
-      bookmarkMap[bookmark.key] = bookmark.val();
+      const val = bookmark.val();
+      bookmarkMap[bookmark.key] = val;
+      recipesRef.child(val.recipeId).once('value').then((recipeSnapshot) => {
+        dispatch({
+          type: RECIPE.FETCH_RECIPE_ITEM,
+          recipeId: val.recipeId,
+          recipe: recipeSnapshot.val()
+        });
+      });
     });
     dispatch({
       type: BOOKMARK.FETCH_BOOKMARKS,

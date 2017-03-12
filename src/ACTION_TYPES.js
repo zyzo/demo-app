@@ -1,6 +1,7 @@
 export const RECIPE = {
   ADD_RECIPE: 'RECIPE: add recipe',
-  FETCH_RECIPES: 'RECIPE: fetch recipes'
+  FETCH_RECIPES: 'RECIPE: fetch recipes',
+  FETCH_RECIPE_ITEM: 'RECIPE: fetch recipe item'
 };
 
 
