@@ -5,5 +5,6 @@ export const RECIPE = {
 
 
 export const BOOKMARK = {
-  ADD_BOOKMARK: 'BOOKMARK: add bookmark'
+  ADD_BOOKMARK: 'BOOKMARK: add bookmark',
+  FETCH_BOOKMARKS: 'BOOKMARK: fetch bookmarks'
 };

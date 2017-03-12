@@ -1,3 +1,4 @@
+import immutable from 'immutable';
 import { BOOKMARK } from '../ACTION_TYPES';
 
 const initialState = {
@@ -18,6 +19,8 @@ const initialState = {
 
 const bookmarks = (state, action) => {
   switch (action.type) {
+    case BOOKMARK.FETCH_BOOKMARKS:
+      return state.set('bookmarkMap', immutable.fromJS(action.bookmarkMap));
     case BOOKMARK.ADD_TO_BOOKMARK:
     default:
       return state;
