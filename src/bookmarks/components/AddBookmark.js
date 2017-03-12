@@ -53,7 +53,7 @@ const AddToCooklist = React.createClass({
                 note: this.state.noteInput,
                 recipeId: this.props.params.recipeId
               });
-              browserHistory.push('/bookmarks');
+              browserHistory.push('/shoplist');
             }}>Save this</Button>
           </Form>
         </div>

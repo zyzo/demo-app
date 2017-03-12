@@ -1,9 +1,22 @@
-import React from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-export default React.createClass({
-  render() {
-    return (
-      <div>dasdas</div>
-    );
+import IngredientList from './components/IngredientList';
+import { fetchIngredients, removeIngredient } from './actions';
+
+const mapStateToProps = state => (
+  {
+    ingredientMap: state.getIn(['ingredients', 'ingredientMap'])
   }
-});
+);
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({
+    fetchIngredients, removeIngredient
+  }, dispatch);
+
+const IngredientsListContainer = connect(
+  mapStateToProps, mapDispatchToProps
+)(IngredientList);
+
+export default IngredientsListContainer;

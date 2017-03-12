@@ -9,3 +9,8 @@ export const BOOKMARK = {
   ADD_BOOKMARK: 'BOOKMARK: add bookmark',
   FETCH_BOOKMARKS: 'BOOKMARK: fetch bookmarks'
 };
+
+export const INGREDIENT = {
+  REMOVE_INGREDIENT: 'INGREDIENT: remove ingredient',
+  FETCH_INGREDIENTS: 'INGREDIENT: fetch ingredients'
+};

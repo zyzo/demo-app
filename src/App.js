@@ -20,7 +20,7 @@ const App = React.createClass({
             <Route path="/" component={RecipesListContainer}/>
             <Route path="/add_bookmark/:recipeId" component={AddBookmarkContainer} />
             <Route path="/shoplist/:subRoute" component={ShoplistNavComponent} />
-            <Route path="/shoplist/" component={ShoplistNavComponent} />
+            <Route path="/shoplist" component={ShoplistNavComponent} />
         </Router>
       </Provider>
     );
