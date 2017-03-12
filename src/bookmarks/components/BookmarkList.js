@@ -7,7 +7,7 @@ const BookmarkList = React.createClass({
   },
   render() {
     const {
-      bookmarkMap
+      bookmarkMap, recipesMap
     } = this.props;
     return (
       <div>
@@ -15,11 +15,16 @@ const BookmarkList = React.createClass({
           <Button color="default" block onClick={addBookmark}>Add my recipe</Button>
         </div>*/}
         <div className="bookmark-list">
-          {bookmarkMap.keySeq().map((bookmarkId, key) =>
-            <BookmarkItem bookmark={bookmarkMap.get(bookmarkId)}
-              bookmarkId={bookmarkId}
-              key={key}/>
-          )}
+          {bookmarkMap.keySeq().map((bookmarkId, key) => {
+            const bookmark = bookmarkMap.get(bookmarkId);
+            return (
+              <BookmarkItem
+                bookmark={bookmark}
+                recipe={recipesMap.get(bookmark.get('recipeId'))}
+                bookmarkId={bookmarkId}
+                key={key}/>
+            );
+          })}
       </div>
       </div>
     );

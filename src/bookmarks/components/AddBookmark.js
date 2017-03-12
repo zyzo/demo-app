@@ -50,9 +50,10 @@ const AddToCooklist = React.createClass({
               addBookmark({
                 date: this.state.dateInput,
                 meal: this.state.mealInput,
-                note: this.state.noteInput
+                note: this.state.noteInput,
+                recipeId: this.props.params.recipeId
               });
-              browserHistory.push(`/bookmarks`);
+              browserHistory.push('/bookmarks');
             }}>Save this</Button>
           </Form>
         </div>

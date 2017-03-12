@@ -6,7 +6,8 @@ import BookmarkList from '../components/BookmarkList';
 
 const BookmarkListContainer = connect(
   state => ({
-    bookmarkMap: state.getIn(['bookmarks', 'bookmarkMap'])
+    bookmarkMap: state.getIn(['bookmarks', 'bookmarkMap']),
+    recipesMap: state.getIn(['recipes', 'recipeMap'])
   }),
   dispatch => bindActionCreators({
     fetchBookmarks

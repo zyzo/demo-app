@@ -24,8 +24,7 @@ export const removeRecipe = (key) => dispatch => {
 };
 
 export const addRecipe = () => {
-  const newRecipe = recipesRef.push();
-  newRecipe.set({
+  recipesRef.push({
     user: 'Boon map',
     name: 'Croquette',
     duration: 10
