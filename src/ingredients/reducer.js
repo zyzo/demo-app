@@ -1,6 +1,6 @@
 import immutable from 'immutable';
 
-import { RECIPE } from '../ACTION_TYPES';
+import { INGREDIENT } from '../ACTION_TYPES';
 
 const initialState = {
   ingredientMap: {},
@@ -9,11 +9,11 @@ const initialState = {
 
 const ingredients = (state, action) => {
   switch (action.type) {
-    case RECIPE.FETCH_INGREDIENT:
+    case INGREDIENT.FETCH_INGREDIENTS:
       return state
-        .set('ingredientMap', immutable.fromJS(action.ingredientsMap))
+        .set('ingredientMap', immutable.fromJS(action.ingredientMap))
         .set('fetched', true);
-    case RECIPE.REMOVE_INGREDIENT:
+    case INGREDIENT.REMOVE_INGREDIENT:
     default:
       return state;
   }

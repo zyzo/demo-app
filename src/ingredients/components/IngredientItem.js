@@ -1,33 +1,18 @@
 import React from 'react';
-import { browserHistory } from 'react-router';
-import { Button } from 'reactstrap';
+
+import './IngredientItem.css';
 
 const IngredientItem = React.createClass({
   render() {
     const {
-      ingredient, removeIngredient, ingredientId
+      ingredient, selected, onClick
     } = this.props;
     return (
-      <div className="ingredient-item" onClick={() => {
-        browserHistory.push(`/add_bookmark/${ingredientId}`);
-      }}>
-        <div className="ingredient-user-picture">
-          <div className="user-picture"></div>
-        </div>
-        <div className="ingredient-main-info">
-          {ingredient.get('user')}
-          <h4>{ingredient.get('name')}</h4>
-        </div>
-        <div className="ingredient-right-info">
-          <p>{ingredient.get('duration')} min cook</p>
-        </div>
-        <div className="icon">
-          <i className="fa fa-chevron-right" aria-hidden="true"></i>
-        </div>
-        <Button className="remove-btn" color="danger" size="sm"
-          onClick={removeIngredient}>
-          Remove
-        </Button>
+      <div className={
+        `ingredient-item${selected ? ' selected' : ''}`}
+        onClick={onClick}>
+        <input type="checkbox" checked={selected}/>
+        <span className="ingredient-item-name">{ingredient}</span>
       </div>
     );
   }

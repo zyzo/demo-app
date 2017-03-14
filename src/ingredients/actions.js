@@ -4,13 +4,13 @@ import { INGREDIENT } from '../ACTION_TYPES';
 const ingredientsRef = firebase.database().ref('ingredients');
 export const fetchIngredients = () => dispatch => {
   ingredientsRef.once('value').then((snapshot) => {
-    const ingredientsMap = {};
+    const ingredientMap = {};
     snapshot.forEach(ingredient => {
-      ingredientsMap[ingredient.key] = ingredient.val();
+      ingredientMap[ingredient.key] = ingredient.val();
     });
     dispatch({
       type: INGREDIENT.FETCH_INGREDIENTS,
-      ingredientsMap
+      ingredientMap
     });
   });
 };
