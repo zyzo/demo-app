@@ -3,7 +3,7 @@
   margin: 0.25rem 0;
 }
 .ingredient-item.selected {
-  background-color: #ccc;
+  background-color: #eee;
 }
 
 .ingredient-item-name {

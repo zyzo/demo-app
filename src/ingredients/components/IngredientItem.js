@@ -11,7 +11,7 @@ const IngredientItem = React.createClass({
       <div className={
         `ingredient-item${selected ? ' selected' : ''}`}
         onClick={onClick}>
-        <input type="checkbox" checked={selected}/>
+        <input type="checkbox" checked={!!selected}/>
         <span className="ingredient-item-name">{ingredient}</span>
       </div>
     );
