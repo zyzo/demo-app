@@ -12,7 +12,8 @@ const IngredientItem = React.createClass({
         `ingredient-item${selected ? ' selected' : ''}`}
         onClick={onClick}>
         <input type="checkbox" checked={!!selected}/>
-        <span className="ingredient-item-name">{ingredient}</span>
+        <span className="ingredient-item-name">{ingredient.get('name')}</span>
+        <div style={{ color: '#999' }}>{ingredient.getIn(['recipe', 'name'])}</div>
       </div>
     );
   }

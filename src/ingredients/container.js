@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import _ from 'lodash';
+import { List } from 'immutable';
 import { bindActionCreators } from 'redux';
 import IngredientList from './components/IngredientList';
 import { fetchIngredients, removeIngredient } from './actions';
@@ -9,15 +10,20 @@ const mapStateToProps = state => {
   const recipeMap = state.getIn(['recipes', 'recipeMap']);
   const bookmarkMap = state.getIn(['bookmarks', 'bookmarkMap']);
 
-  const toBuyIngredients =
+  const displayedIngredientIds =
     bookmarkMap
     .map(bookmark => recipeMap.get(bookmark.get('recipeId')).set('bookmark', bookmark))
-    .map(recipe => recipe.get('ingredients'))
-    .flatten()
-    .filter(_.isNumber)
-    .map(ingredientId => ingredientMap.get(ingredientId.toString()));
+    .reduce((acc, recipe) => acc.concat(recipe
+      .get('ingredients')
+      .filter(_.isNumber)
+      .map(ingredientId => ingredientMap.get(ingredientId.toString()).set('recipe', recipe))),
+      List()
+    );
+
+  console.log(displayedIngredientIds.toJS())
+
   return {
-    ingredientMap: toBuyIngredients
+    ingredientMap: displayedIngredientIds
   };
 };
 
